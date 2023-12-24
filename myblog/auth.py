@@ -19,9 +19,9 @@ def register():
         error = None
 
         if not username:
-            error = 'Username is required.'
+            error = 'Введите имя пользователя.'
         elif not password:
-            error = 'Password is required.'
+            error = 'Введите пароль.'
 
         if error is None:
             try:
@@ -31,7 +31,7 @@ def register():
                 )
                 db.commit()
             except db.IntegrityError:
-                error = f"User {username} is already registered."
+                error = f"Пользователь с именем {username} уже зарегистрирован."
             else:
                 return redirect(url_for("auth.login"))
 
@@ -52,9 +52,9 @@ def login():
         ).fetchone()
 
         if user is None:
-            error = 'Incorrect username.'
+            error = 'Неправильное имя пользователя.'
         elif not check_password_hash(user['password'], password):
-            error = 'Incorrect password.'
+            error = 'Неправильный пароль.'
 
         if error is None:
             session.clear()
