@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         {% if g.user %}
-        <span>{{ g.user['username'] }}</span>
+        <strong class="text-info p-2">{{ g.user['username'] }}</strong>
         <a class="nav-link" href="href=" {{ url_for('auth.logout') }}">Выход</a>
         {% else %}
         <a class="nav-link" href="{{ url_for('auth.register') }}">Регистрация</a>
