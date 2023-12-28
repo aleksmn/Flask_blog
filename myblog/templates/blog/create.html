@@ -5,11 +5,13 @@
 {% endblock %}
 
 {% block content %}
-  <form method="post">
-    <label for="title">Заголовок</label>
-    <input name="title" id="title" value="{{ request.form['title'] }}" required>
-    <label for="body">Текст</label>
-    <textarea name="body" id="body">{{ request.form['body'] }}</textarea>
-    <input type="submit" value="Save">
+  <form method="post" style="max-width: 600px;">
+    <label for="title" class="form-label">Заголовок</label>
+    <input name="title" id="title" class="form-control mb-3" value="{{ request.form['title'] }}" required>
+    <label for="body" class="form-label">Текст</label>
+    <textarea name="body" id="body" class="form-control mb-3" style="height: 250px; resize: none;">
+      {{ request.form['body'] }}
+    </textarea>
+    <input type="submit" value="Сохранить" class="btn btn-primary">
   </form>
 {% endblock %}
