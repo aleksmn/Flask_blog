@@ -3,7 +3,7 @@ import os
 from flask import Flask, render_template
 
 # Команда для запуска приложения
-# flask --app myblog run --debug
+# flask --app myblog run --debug --host=0.0.0.0
 
 
 def create_app(test_config=None):
